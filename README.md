@@ -1,60 +1,29 @@
-# Data analysis and Manipulation
-import plotly.graph_objs as go
-import plotly.io as pio
-import plotly.express as px
-import pandas as pd
+1. Define the Problem
+- **Objective**: Clearly state what you aim to achieve through your data
+analysis (e.g., understand trends, make predictions).
+- **Data Source**: Identify where your data comes from (e.g., CSV file,
+database).
 
-# Data Visualization
-import matplotlib.pyplot as plt
+2. Data Acquisition
+- **Data Collection**: Obtain the dataset you will analyze.
+- **Data Understanding**: Explore the structure of the dataset (columns, data
+types, initial observations).
 
-# Importing Plotly
-import plotly.offline as py
-py.init_notebook_mode(connected=True)
+3. Data Cleaning and Preparation
+- **Handle Missing Data**: Decide how to deal with missing values (e.g.,
+imputation, deletion).
+- **Data Transformation**: Convert data types if necessary (e.g., dates to datetime
+objects).
+- **Feature Selection**: Choose relevant columns/features for analysis.
 
-# Data analysis and Manipulation
-import plotly.graph_objs as go
-import plotly.io as pio
-import plotly.express as px
-import pandas as pd
+4. Exploratory Data Analysis (EDA)
+- **Descriptive Statistics**: Compute basic statistics (mean, median, mode, range,
+etc.).
+- **Data Visualization**: Create plots (histograms, box plots, scatter plots) to
+understand distributions and relationships between variables.
+- **Identify Patterns**: Look for trends, anomalies, or patterns in the data.
 
-# Data Visualization
-import matplotlib.pyplot as plt
-
-# Importing Plotly
-import plotly.offline as py
-py.init_notebook_mode(connected=True)
-
-# Initializing Plotly
-pio.renderers.default = 'colab'
-pd.read_csv('/content/covid.csv')
-pd.read_csv('/content/covid_grouped.csv')
-pd.read_csv('/content/coviddeath.csv')
-print(dataset1.shape)
-print(dataset1.size)
-print(dataset2.shape)
-print(dataset2.size)
-print(dataset3.shape)
-print(dataset3.size)
-dataset1.drop(['Deaths/1M pop', 'TotalTests', 'Tests/1M pop',
-       'WHO Region', 'iso_alpha'],
-              axis=1, inplace=True)
-
-# Select random set of values from dataset1
-dataset1.sample(5)
-dataset3.drop(['Data as of', 'Start Week', 'End Week', 'State', 'Condition Group',
-       'Condition', 'ICD10_codes', 'Age Group', 'Number of COVID-19 Deaths'],
-              axis=1, inplace=True)
-
-# Select random set of values from dataset1
-dataset3.sample(5)
-from plotly.figure_factory import create_table
-
-colorscale = [[0, '#4d004c'], [.5, '#f2e5ff'], [1, '#ffffff']]
-table = create_table(dataset1.head(15), colorscale=colorscale)
-py.iplot(table)
-px.bar(dataset1.head(15), x = 'Country/Region',
-       y = 'TotalCases',color = 'TotalCases',
-       height = 500,hover_data = ['Country/Region', 'Continent'])
-       px.scatter(dataset1, x='Continent',y='TotalCases',
-           hover_data=['Country/Region', 'Continent'],
-           color='TotalCases', size='TotalCases', size_max=80)
+5. Basic Statistical Analysis
+- **Correlation Analysis**: Measure relationships between variables.
+- **Hypothesis Testing**: If applicable, conduct basic statistical tests to validate
+assumptions.
